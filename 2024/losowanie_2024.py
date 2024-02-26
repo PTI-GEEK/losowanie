@@ -37,27 +37,17 @@ with open("dane_implementacja.bin", "rb") as implementacja:
         dane_implementacja[id] = data
     id_implementacji = list(dane_implementacja.keys())
 
-testers = {
-    "PD": "pawel.dymora@prz.edu.pl",
-    "TC": "tcichocka@gazeta.pl",
-    "AM": "a.mowna@issi.uz.zgora.pl",
-    "AW": "awrzeciono@interia.pl",
-    "JK": "jkaczor@nowodworek.krakow.pl",
-    "MT": "mtokarz.zsem@gmail.com",
-    "AS": "a.stolinska@gmail.com",
-    "EA": "ewa.ankiewicz-jasinska@o2.pl",
-    "MK": "maciej.kazon@inzynierowie.com",
-}
 
+testers = ('PD', 'TC', 'AM', 'AW', 'JK', 'MT', 'AS', 'EA', 'MK')
 testy_konc = {}
 testy_impl = {}
 
-for initials in testers.keys():
+for initials in testers:
     testy_konc[initials] = []
     testy_impl[initials] = []
 
 for circle in range(circles_count):
-    for tester in testers.keys():
+    for tester in testers:
         games_done_k = testy_konc[tester]
         games_done_i = testy_impl[tester]
         id_k = get_game_id(id_koncepcji, games_done_k, count=(circle * 2) + 3)
@@ -69,7 +59,7 @@ for circle in range(circles_count):
 
 
 # dane output
-for tester in testers.keys():
+for tester in testers:
     file_name = f"juror_{tester}.xlsx"
     ids = testy_konc[tester]
     rodzk = ["Koncepcja" for _ in range(len(ids))]
