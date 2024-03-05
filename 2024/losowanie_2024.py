@@ -2,17 +2,19 @@ import pickle
 import polars as pl
 from random import choice
 
+plik_csv = "GEEK_2024_2024-03-03_11-32.csv"
 circles_count = 5
 
 
-def get_game_id(ids, old_games, count=3):
-    if not ids:
+def get_game_id(iids, old_games, count=3):
+    if not iids:
         return -1
     ret = False
     counted = 0
+    rid = -1
     while not ret:
         counted += 1
-        rid = choice(ids)
+        rid = choice(iids)
         if rid in old_games:
             if counted < count:
                 continue
@@ -23,6 +25,27 @@ def get_game_id(ids, old_games, count=3):
     return rid
 
 
+# wczytanie danych z CSV
+dane = pl.read_csv(plik_csv, separator=";", ignore_errors=True)
+print(dane.columns)
+# dane_sent = dane.filter(pl.col("Status") == "Wysłane")[["ID", "Link", "Kategoria"]]
+dane_sent = dane.filter(pl.col("Status") == "Wysłane")[["ID", "Link", "Kategoria"]]
+print(dane_sent)
+dane_sent.write_excel('dane_wyslane.xls')
+dane_koncepcja = dane_sent.filter(pl.col("Kategoria") == "koncepcja gry")[["ID", "Link", ]]
+dane_implementacja = dane_sent.filter(pl.col("Kategoria") == "implementacja gry")[["ID", "Link", ]]
+
+with open("dane_koncepcja.bin", "wb") as koncepcja:
+    pickle.dump(dane_koncepcja, koncepcja)
+    print(dane_koncepcja)
+    dane_koncepcja.write_csv("koncepcja.csv")
+
+with open("dane_implementacja.bin", "wb") as implementacja:
+    pickle.dump(dane_implementacja, implementacja)
+    print(dane_implementacja)
+    dane_implementacja.write_csv("implementacja.csv")
+
+# przetwarzanie danych
 with open("dane_koncepcja.bin", "rb") as koncepcja:
     dane_koncepcja = {}
     dane_kon = pickle.load(koncepcja)
@@ -37,8 +60,7 @@ with open("dane_implementacja.bin", "rb") as implementacja:
         dane_implementacja[id] = data
     id_implementacji = list(dane_implementacja.keys())
 
-
-testers = ('PD', 'TC', 'AM', 'AW', 'JK', 'MT', 'AS', 'EA', 'MK')
+testers = ('PD', 'TC', 'AM', 'AW', 'JK', 'MT', 'AS', 'EA', 'MK', 'TK')
 testy_konc = {}
 testy_impl = {}
 
@@ -56,7 +78,6 @@ for circle in range(circles_count):
             testy_konc[tester].append(id_k)
         if id_i > 0:
             testy_impl[tester].append(id_i)
-
 
 # dane output
 for tester in testers:
