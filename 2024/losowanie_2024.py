@@ -1,10 +1,13 @@
 import pickle
+import json
 import polars as pl
 from random import choice
 
-plik_csv = "GEEK_2024_2024-03-03_11-32.csv"
-circles_count = 5
+plik_csv = "GEEK_2024_2024-03-05_22-50.csv"
+circles_count = 35
 
+podzial_gier = {}
+przydzielone = {}
 
 def get_game_id(iids, old_games, count=3):
     if not iids:
@@ -15,6 +18,14 @@ def get_game_id(iids, old_games, count=3):
     while not ret:
         counted += 1
         rid = choice(iids)
+        try:
+            if przydzielone[rid] == 3:
+                # print(f"{counted=} / {rid=}")
+                # print(f"{rid=} : {przydzielone[rid]=}")
+                # old_games.append(rid)
+                return -1
+        except:
+            pass
         if rid in old_games:
             if counted < count:
                 continue
@@ -72,12 +83,27 @@ for circle in range(circles_count):
     for tester in testers:
         games_done_k = testy_konc[tester]
         games_done_i = testy_impl[tester]
-        id_k = get_game_id(id_koncepcji, games_done_k, count=(circle * 2) + 3)
-        id_i = get_game_id(id_implementacji, games_done_i, count=(circle * 2) + 3)
+        print(f"{tester=} / {testy_konc[tester]=}")
+        id_k = get_game_id(id_koncepcji, games_done_k, count=(circle * 3) + 10)
+        print(f"{tester=} / {testy_impl[tester]=}")
+        id_i = get_game_id(id_implementacji, games_done_i, count=(circle * 3) + 10)
         if id_k > 0:
             testy_konc[tester].append(id_k)
+            if not id_k in podzial_gier:
+                podzial_gier[id_k] = ["Koncepcja"]
+            podzial_gier[id_k].append(tester)
+            if not id_k in przydzielone:
+                przydzielone[id_k] = 0
+            przydzielone[id_k] += 1
+
         if id_i > 0:
             testy_impl[tester].append(id_i)
+            if not id_i in podzial_gier:
+                podzial_gier[id_i] = ["Implementacja"]
+            podzial_gier[id_i].append(tester)
+            if not id_i in przydzielone:
+                przydzielone[id_i] = 0
+            przydzielone[id_i] += 1
 
 # dane output
 for tester in testers:
@@ -95,3 +121,21 @@ for tester in testers:
     }
     df_k = pl.DataFrame(dane_do_df)
     df_k.write_excel(file_name)
+
+with open("podzial_gier.json", "w") as pgier:
+    json.dump(podzial_gier, pgier, ensure_ascii=True, indent= 3)
+
+ile_gier = 0
+zbyt_malo = 0
+for gra in podzial_gier:
+    ile_gier += 1
+    ile_przydzielono = len(podzial_gier[gra])
+
+    if ile_przydzielono < 4:
+        zbyt_malo += 1
+        print(f"Uwaga: {gra=} => {podzial_gier[gra]=}")
+    else:
+        print(f"OK: {gra=} => {ile_przydzielono=}")
+else:
+    print(f"Koniec sprawdzenia przydziału gier dla: {ile_gier=} / {zbyt_malo=}")
+    print(przydzielone)
