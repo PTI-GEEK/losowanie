@@ -1,0 +1,362 @@
+{
+   "169": [
+      "Koncepcja",
+      "JK",
+      "EA",
+      "TK"
+   ],
+   "117": [
+      "Implementacja",
+      "JK",
+      "MT",
+      "MK"
+   ],
+   "156": [
+      "Koncepcja",
+      "MT",
+      "EA",
+      "AS"
+   ],
+   "122": [
+      "Implementacja",
+      "MT",
+      "JK",
+      "EA"
+   ],
+   "83": [
+      "Koncepcja",
+      "AS",
+      "JK",
+      "EA"
+   ],
+   "115": [
+      "Implementacja",
+      "AS",
+      "TK",
+      "MT"
+   ],
+   "123": [
+      "Koncepcja",
+      "EA",
+      "MK",
+      "MT"
+   ],
+   "127": [
+      "Implementacja",
+      "EA",
+      "MK",
+      "AS"
+   ],
+   "188": [
+      "Implementacja",
+      "MK",
+      "MT",
+      "EA"
+   ],
+   "119": [
+      "Koncepcja",
+      "TK",
+      "AS",
+      "MT"
+   ],
+   "102": [
+      "Koncepcja",
+      "JK",
+      "TK",
+      "MK"
+   ],
+   "137": [
+      "Implementacja",
+      "JK",
+      "EA",
+      "TK"
+   ],
+   "163": [
+      "Koncepcja",
+      "MT",
+      "AS",
+      "EA"
+   ],
+   "131": [
+      "Implementacja",
+      "MT",
+      "AS",
+      "TK"
+   ],
+   "93": [
+      "Implementacja",
+      "AS",
+      "EA",
+      "MK"
+   ],
+   "134": [
+      "Koncepcja",
+      "EA",
+      "JK",
+      "MK"
+   ],
+   "141": [
+      "Koncepcja",
+      "MK",
+      "TK",
+      "MT"
+   ],
+   "161": [
+      "Implementacja",
+      "MK",
+      "TK",
+      "MT"
+   ],
+   "133": [
+      "Implementacja",
+      "TK",
+      "MT",
+      "AS"
+   ],
+   "170": [
+      "Koncepcja",
+      "AS",
+      "MT",
+      "JK"
+   ],
+   "150": [
+      "Implementacja",
+      "AS",
+      "TK",
+      "JK"
+   ],
+   "85": [
+      "Koncepcja",
+      "EA",
+      "AS",
+      "TK"
+   ],
+   "107": [
+      "Implementacja",
+      "EA",
+      "JK",
+      "AS"
+   ],
+   "162": [
+      "Implementacja",
+      "MK",
+      "JK",
+      "MT"
+   ],
+   "86": [
+      "Implementacja",
+      "TK",
+      "EA",
+      "AS"
+   ],
+   "172": [
+      "Koncepcja",
+      "JK",
+      "MK",
+      "MT"
+   ],
+   "95": [
+      "Implementacja",
+      "JK",
+      "AS",
+      "EA"
+   ],
+   "129": [
+      "Implementacja",
+      "MT",
+      "AS"
+   ],
+   "106": [
+      "Koncepcja",
+      "AS",
+      "JK",
+      "EA"
+   ],
+   "160": [
+      "Koncepcja",
+      "EA",
+      "AS",
+      "JK"
+   ],
+   "155": [
+      "Implementacja",
+      "EA",
+      "JK",
+      "TK"
+   ],
+   "158": [
+      "Implementacja",
+      "MK",
+      "MT",
+      "JK"
+   ],
+   "159": [
+      "Koncepcja",
+      "TK",
+      "JK",
+      "MK"
+   ],
+   "110": [
+      "Implementacja",
+      "TK",
+      "EA"
+   ],
+   "168": [
+      "Implementacja",
+      "JK",
+      "MK",
+      "TK"
+   ],
+   "174": [
+      "Koncepcja",
+      "MT",
+      "MK",
+      "EA"
+   ],
+   "109": [
+      "Implementacja",
+      "MT",
+      "TK",
+      "JK"
+   ],
+   "183": [
+      "Koncepcja",
+      "AS",
+      "MK",
+      "MT"
+   ],
+   "139": [
+      "Implementacja",
+      "AS",
+      "MK",
+      "TK"
+   ],
+   "165": [
+      "Koncepcja",
+      "EA",
+      "TK",
+      "AS"
+   ],
+   "171": [
+      "Koncepcja",
+      "MK",
+      "TK",
+      "MT"
+   ],
+   "142": [
+      "Koncepcja",
+      "TK",
+      "MT",
+      "MK"
+   ],
+   "140": [
+      "Implementacja",
+      "TK",
+      "JK",
+      "MK"
+   ],
+   "184": [
+      "Koncepcja",
+      "JK",
+      "AS",
+      "MK"
+   ],
+   "157": [
+      "Implementacja",
+      "JK",
+      "EA",
+      "MT"
+   ],
+   "120": [
+      "Koncepcja",
+      "MT",
+      "JK",
+      "MK"
+   ],
+   "149": [
+      "Implementacja",
+      "AS",
+      "JK",
+      "MK"
+   ],
+   "81": [
+      "Implementacja",
+      "MK",
+      "AS",
+      "TK"
+   ],
+   "84": [
+      "Implementacja",
+      "EA",
+      "MT"
+   ],
+   "91": [
+      "Implementacja",
+      "TK",
+      "EA",
+      "AS"
+   ],
+   "97": [
+      "Implementacja",
+      "JK",
+      "MK",
+      "MT"
+   ],
+   "146": [
+      "Implementacja",
+      "EA",
+      "MT"
+   ],
+   "164": [
+      "Implementacja",
+      "MK",
+      "MT",
+      "JK"
+   ],
+   "180": [
+      "Koncepcja",
+      "JK",
+      "MT",
+      "AS"
+   ],
+   "125": [
+      "Implementacja",
+      "TK",
+      "EA",
+      "MK"
+   ],
+   "166": [
+      "Implementacja",
+      "MK",
+      "TK",
+      "MT"
+   ],
+   "88": [
+      "Implementacja",
+      "EA",
+      "MK",
+      "TK"
+   ],
+   "128": [
+      "Implementacja",
+      "TK",
+      "JK",
+      "MT"
+   ],
+   "130": [
+      "Implementacja",
+      "JK",
+      "MK",
+      "MT"
+   ],
+   "132": [
+      "Implementacja",
+      "TK",
+      "AS"
+   ],
+   "87": [
+      "Implementacja",
+      "JK",
+      "AS"
+   ]
+}

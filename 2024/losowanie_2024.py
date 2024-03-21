@@ -39,9 +39,13 @@ def get_game_id(iids, old_games, count=3):
 # wczytanie danych z CSV
 dane = pl.read_csv(plik_csv, separator=";", ignore_errors=True)
 print(dane.columns)
-# dane_sent = dane.filter(pl.col("Status") == "Wysłane")[["ID", "Link", "Kategoria"]]
-dane_sent = dane.filter(pl.col("Status") == "Wysłane")[["ID", "Link", "Kategoria"]]
+dane_sent = dane.filter(pl.col("Status") == "Wysłane")[["ID", "Link", "Kategoria", "Poziom"]]
 print(dane_sent)
+# SP
+# dane_sent = dane_sent.filter(pl.col("Poziom") == "szkoła podstawowa")
+# LO
+dane_sent = dane_sent.filter(pl.col("Poziom") == "szkoła ponadpodstawowa")
+
 dane_sent.write_excel('dane_wyslane.xls')
 dane_koncepcja = dane_sent.filter(pl.col("Kategoria") == "koncepcja gry")[["ID", "Link", ]]
 dane_implementacja = dane_sent.filter(pl.col("Kategoria") == "implementacja gry")[["ID", "Link", ]]
@@ -71,7 +75,11 @@ with open("dane_implementacja.bin", "rb") as implementacja:
         dane_implementacja[id] = data
     id_implementacji = list(dane_implementacja.keys())
 
-testers = ('PD', 'TC', 'AM', 'AW', 'JK', 'MT', 'AS', 'EA', 'MK', 'TK')
+# SP
+# testers = ('PD', 'TC', 'AM', 'AW')
+# LO
+testers = ('JK', 'MT', 'AS', 'EA', 'MK', 'TK')
+
 testy_konc = {}
 testy_impl = {}
 
